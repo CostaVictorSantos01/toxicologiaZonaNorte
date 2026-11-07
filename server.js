@@ -33,9 +33,9 @@ app.use(
       useDefaults: false,
       directives: {
         'default-src': ["'self'"],
-        'script-src': ["'self'", 'https://www.googletagmanager.com', 'https://www.googleadservices.com', 'https://www.google.com'],
+        'script-src': ["'self'", 'https://www.googletagmanager.com', 'https://www.googleadservices.com', 'https://www.google.com', 'https://googleads.g.doubleclick.net'],
         'style-src': ["'self'"],
-        'img-src': ["'self'", 'data:', 'https://www.googletagmanager.com', 'https://www.googleadservices.com', 'https://googleads.g.doubleclick.net', 'https://pagead2.googlesyndication.com', 'https://www.google.com', 'https://www.google.com.br'],
+        'img-src': ["'self'", 'data:', 'https://www.googletagmanager.com', 'https://www.googleadservices.com', 'https://googleads.g.doubleclick.net', 'https://pagead2.googlesyndication.com', 'https://www.google.com', 'https://www.google.com.br', 'https://ad.doubleclick.net'],
         'font-src': ["'self'"],
         'connect-src': ["'self'", 'https://www.googletagmanager.com', 'https://www.googleadservices.com', 'https://googleads.g.doubleclick.net', 'https://pagead2.googlesyndication.com', 'https://www.google.com', 'https://www.google.com.br', 'https://ad.doubleclick.net'],
         'frame-src': ['https://www.google.com', 'https://www.googletagmanager.com'],
