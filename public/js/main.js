@@ -21,7 +21,7 @@
     });
   }
 
-    /* Rolagem suave sem mostrar #âncora na barra de endereço */
+   /* Rolagem suave sem mostrar #âncora na barra de endereço */
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
@@ -29,7 +29,11 @@
     const alvo = id ? document.getElementById(id) : null;
     if (!alvo) return;
     e.preventDefault();
-    alvo.scrollIntoView({ behavior: 'smooth' });
+    if (id === 'topo') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      alvo.scrollIntoView({ behavior: 'smooth' });
+    }
     history.replaceState(null, '', location.pathname + location.search);
   });
 
