@@ -59,6 +59,15 @@ app.use((req, res, next) => {
 app.use(compression());
 app.use(express.json({ limit: '10kb' }));
 
+/* ---------- URLs limpas: /index.html -> /  e  /privacidade.html -> /privacidade ---------- */
+app.use((req, res, next) => {
+  if (req.path.endsWith('.html')) {
+    const limpa = req.path.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+    return res.redirect(301, limpa || '/');
+  }
+  next();
+});
+
 /* ---------- Estáticos com cache ---------- */
 app.use(
   express.static(PUBLIC_DIR, {
